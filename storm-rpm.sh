@@ -14,7 +14,7 @@ MY_DIR=`echo $(cd $(dirname $0); pwd)`
 ### CONFIGURATION BEGINS ###
 
 INSTALL_ROOT_DIR=/opt/storm
-MAINTAINER="<michael@michael-noll.com>"
+MAINTAINER="<allen_bhuiyan@comcast.com>"
 
 ### CONFIGURATION ENDS ###
 
@@ -23,8 +23,8 @@ function print_usage() {
     echo "Usage: $myself <storm-zipball-download-url-or-local-path>"
     echo
     echo "Examples:"
-    echo "  \$ $myself http://www.eu.apache.org/dist/incubator/storm/apache-storm-0.9.1-incubating/apache-storm-0.9.1-incubating.zip"
-    echo "  \$ $myself /local/path/to/apache-storm-0.9.1-incubating.zip"
+    echo "  \$ $myself http://mirrors.ocf.berkeley.edu/apache/storm/apache-storm-1.0.0/apache-storm-1.0.0.zip"
+    echo "  \$ $myself /local/path/to/apache-storm-1.0.0.zip"
 }
 
 if [ $# -ne 1 ]; then
@@ -70,11 +70,11 @@ cd apache-storm-$STORM_VERSION
 fpm -s dir -t rpm -a all \
     -n storm \
     -v $STORM_VERSION \
-    --iteration "1.miguno" \
+    --iteration "1.abhuiyan" \
     --maintainer "$MAINTAINER" \
     --vendor "Storm Project" \
     --url http://storm.apache.org \
-    --description "Distributed real-time computation system" \
+    --description "Comcast" \
     -p $OLD_PWD/storm-VERSION.el6.ARCH.rpm \
     -a "x86_64" \
     --prefix $INSTALL_ROOT_DIR \
